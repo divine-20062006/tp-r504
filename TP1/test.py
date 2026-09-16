@@ -1,17 +1,16 @@
 import pytest
-import fonction as f
+import fonctions as f
 
 def test_1():
-        assert f.puissance(2,3) == 8
-        assert f.puissance(2,2) == 4
+    assert f.puissance(2, 3) == 8
+    assert f.puissance(2, 2) == 4
 
 def test_2():
-        assert f.puissance(-1,2) == 1
-        assert f.puissance(-1, 3) == -1
-        assert f.puissance(-1, -1) == -1
-        assert f.puissance(-1, -2) == 1
-        assert f.puissance(-2, -1) == -0.5
-
+    assert f.puissance(-1, 2) == 1
+    assert f.puissance(-1, 3) == -1
+    assert f.puissance(-1, -1) == -1
+    assert f.puissance(-1, -2) == 1
+    assert f.puissance(-2, -1) == -0.5
 
 def test_zero_puissance_positive():
     assert f.puissance(0, 5) == 0
@@ -19,3 +18,11 @@ def test_zero_puissance_positive():
 def test_zero_puissance_negative():
     with pytest.raises(ValueError):
         f.puissance(0, -2)
+
+def test_type_error():
+    with pytest.raises(TypeError):
+        f.puissance(0,0)
+
+def test_zero_puissance_zero():
+    with pytest.raises(ValueError):
+        f.puissance(0, 0)

@@ -3,6 +3,8 @@ def puissance(a, b):
         raise TypeError("Seuls les entiers sont autorises")
     if a == 0 and b < 0:
         raise ValueError("0 ne peut pas etre eleve a une puissance negative")
+    if a == 0 and b == 0:
+        raise ValueError("0 puissance 0 est une forme indeterminee")
     
     if b == 0:
         return 1
