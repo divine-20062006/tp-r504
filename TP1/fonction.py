@@ -3,4 +3,15 @@ def puissance(a, b):
         raise TypeError("Seuls les entiers sont autorises")
     if a == 0 and b < 0:
         raise ValueError("0 ne peut pas etre eleve a une puissance negative")
-    return a ** b
+    
+    if b == 0:
+        return 1
+    
+    res = 1
+    for _ in range(abs(b)):
+        res *= a
+        
+    if b < 0:
+        return 1 / res
+        
+    return res
