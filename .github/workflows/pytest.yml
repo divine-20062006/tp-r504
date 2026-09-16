@@ -10,4 +10,4 @@ jobs:
       - name: Install pytest
         run: pip install pytest
       - name: Run tests
-        run: python3 -m pytest TP1/test.py
+        run: python3 -m pytest test.py
